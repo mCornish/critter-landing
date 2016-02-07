@@ -1,0 +1,449 @@
+@import url(https://fonts.googleapis.com/css?family=Euphoria+Script|Lato:400,700,400italic);
+
+/* ------------------------------ */
+/* ------------- #VARIABLES */
+/* ------------------------------ */
+
+/* -------------------- */
+/* --- #COLORS */
+/* -------------------- */
+$color-1: rgb(50,50,50); // dark gray
+$color-2: hsl(38, 9,98); // goldish white
+$color-2-t: hsla(38, 9,98,.9); // translucent greenish white
+$color-3: hsl(4,80,52); // red
+$color-4: hsl(38,79,54); // gold
+$color-5: hsl(0,97,26); // dark red
+
+/* -------------------- */
+/* --- #MEDIA QUERY BREAKPOINTS */
+/* -------------------- */
+$break-small: 'screen and (min-width: 1px)';
+$break-medium: 'screen and (min-width: 992px)';
+$break-large: 'screen and (min-width: 1920px)';
+
+/* ------------------------------ */
+/* ------------- #BASE */
+/* ------------------------------ */
+
+html {
+  font-family: 'Lato', sans-serif;
+  color: $color-1;
+  @media #{$break-small} {
+    font-size: 16px !important;
+  }
+  @media #{$break-medium} {
+    font-size: 18px !important;
+  }
+}
+
+body {
+  background: $color-2;
+  font-size: 1em;
+  margin: 0;
+}
+
+h1, h2, h2, a, p, span, input {
+  font-family: 'Lato', sans-serif;
+  color: inherit;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 900;
+}
+h1:first-child {
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1rem;
+}
+
+// Links
+a,
+.fake-link {
+  color: $color-4;
+  position: relative;
+  text-decoration: none;
+}
+
+a:after,
+a:before,
+.fake-link:after,
+.fake-link:before {
+  content: '';
+  height: .1em;
+  width: 0;
+  bottom: -.15em;
+  position: absolute;
+  background: $color-4;
+  transition: .1s ease all;
+}
+
+a:before,
+.fake-link:before {
+  left: 50%;
+}
+
+a:after,
+.fake-link:after {
+  right: 50%;
+}
+
+a:hover:not(.button):before,
+a:hover:not(.button):after,
+.fake-link:not(.button):hover:before,
+.fake-link:not(.button):hover:after {
+  width: 50%;
+}
+
+a:hover,
+a:focus,
+.fake-link:hover {
+  color: $color-4;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+// Input placeholder text color
+input::-webkit-input-placeholder {
+  color: hsl(0,0,60);
+}
+
+input:-moz-placeholder {
+  /* Firefox 18- */
+  color: hsl(0,0,60);
+}
+
+input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: hsl(0,0,60);
+}
+
+input:-ms-input-placeholder {
+  color: hsl(0,0,60);
+}
+
+
+/* ------------------------------ */
+/* ------------- #COMPONENTS */
+/* ------------------------------ */
+
+/* -------------------- */
+/* --- #ANIMATIONS */
+/* -------------------- */
+
+
+
+/* -------------------- */
+/* --- #BOOTSTRAP ADDITIONS */
+/* -------------------- */
+.row {
+
+}
+
+/* -------------------- */
+/* --- #BUTTON */
+/* -------------------- */
+.button {
+  background-color: $color-3;
+  color: $color-2;
+  letter-spacing: 1px;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 1em;
+  min-width: 4em;
+  text-align: center;
+  display: inline;
+  border: none;
+  box-shadow: 0 3px 3px 0 hsla(0,0,0,.5);
+  transition: .2s all ease;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.button:hover,
+.button:focus {
+  background-color: $color-3;
+  color: $color-2;
+  text-decoration: none;
+}
+
+
+/* -------------------- */
+/* --- #CONTENT CONTAINER */
+/* -------------------- */
+.content-container {
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+
+/* -------------------- */
+/* --- #ICON-DESCRIPTION */
+/* -------------------- */
+.icon-desc {
+  text-align: center;
+}
+.icon-desc i {
+  font-size: 2em;
+}
+.icon-desc h2 {
+  margin-bottom: 0;
+}
+
+
+/* -------------------- */
+/* --- #INPUT */
+/* -------------------- */
+input {
+  font-size: 1.5rem;
+  padding: 1em;
+  background-color: inherit;
+
+  @media #{$break-small} {
+    border: .1em solid $color-1;
+  }
+  @media #{$break-medium} {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+
+/* -------------------- */
+/* --- #LOGO */
+/* -------------------- */
+h1.logo {
+  font-family: 'Euphoria Script', cursive;
+  margin-bottom: 0;
+
+  @media #{$break-small} {
+    font-size: 8em;
+    text-align: center;
+  }
+  @media #{$break-medium} {
+    font-size: 8em;
+    margin-top: .5em;
+    text-align: left;
+  }
+}
+
+
+/* -------------------- */
+/* --- #NAV */
+/* -------------------- */
+.nav__item {
+  transition: all .1s ease;
+
+  @media #{$break-small} {
+    border: 1px solid $color-2;
+    padding: .5em;
+  }
+  @media #{$break-medium} {
+    border: none;
+    padding: .2em;
+  }
+}
+.nav__item:hover {
+  text-decoration: none;
+
+  @media #{$break-small} {
+
+  }
+  @media #{$break-medium} {
+    border-bottom: 3px solid $color-2;
+  }
+}
+.nav__item + .nav__item {
+  @media #{$break-small} {
+    margin-left: 0;
+  }
+  @media #{$break-medium} {
+    margin-left: 1em;
+  }
+}
+
+
+/* -------------------- */
+/* --- #VIDEO WRAPPER */
+/* -------------------- */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+  margin-top: 2em;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ------------------------------ */
+/* ------------- #PAGES */
+/* ------------------------------ */
+
+/* -------------------- */
+/* --- #ABOUT */
+/* -------------------- */
+.about__intro {
+  margin-bottom: 5em;
+}
+
+
+/* -------------------- */
+/* --- #CRIT ROLE */
+/* -------------------- */
+.crit-role {
+  background-color: $color-1;
+  color: $color-2;
+}
+
+
+/* -------------------- */
+/* --- #INTRO */
+/* -------------------- */
+.intro {
+  position: relative;
+  background-image: linear-gradient(to right, $color-5, $color-3);
+  background-color: $color-3;
+  color: $color-2;
+  overflow: hidden;
+
+  @media #{$break-small} {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  @media #{$break-medium} {
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+}
+.intro__subhead {
+  margin: 0;
+  opacity: .8;
+}
+.intro__subhead-alpha {
+  @media #{$break-small} {
+    font-size: 1.2em;
+    text-align: center;
+  }
+  @media #{$break-medium} {
+    font-size: 1.3em;
+    text-align: left;
+  }
+}
+.intro__subhead-beta {
+  @media #{$break-small} {
+    font-size: 1.7em;
+    text-align: center;
+  }
+  @media #{$break-medium} {
+    font-size: 1.85em;
+    text-align: left;
+  }
+}
+.intro__cta {
+  margin-top: 1em;
+  background-color: $color-2;
+  color: $color-1;
+  border-color: $color-1;
+}
+.intro__cta:hover {
+  background-color: $color-2;
+  color: $color-3;
+}
+.intro__cta i {
+  position: relative;
+  font-size: 1.1em;
+  left: .2em;
+  transition: left .2s ease;
+}
+.intro__cta:hover i {
+  left: .5em;
+}
+.intro__image {
+  width: 100%;
+  height: auto;
+  max-width: 650px;
+  margin-top: 4em;
+}
+.intro__nav--large {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  margin-top: .5em;
+  margin-right: 3em;
+}
+.intro__nav--small {
+  position: relative;
+}
+.intro__nav .nav__item {
+  color: $color-2;
+  font-size: 1rem;
+}
+
+
+/* -------------------- */
+/* --- #WANT */
+/* -------------------- */
+
+
+/* -------------------- */
+/* --- #CTA */
+/* -------------------- */
+.cta {
+  margin-bottom: 5em;
+}
+.tester-button {
+  margin-top: 1em;
+}
+.tester-button:hover i {
+  color: $color-4;
+}
+.follow-button {
+  margin-top: 3em;
+}
+.follow-button:hover i {
+  color: #55acee;
+}
+
+
+/* ------------------------------ */
+/* ------------- #HELPERS */
+/* ------------------------------ */
+.capitalize {
+  text-transform: capitalize !important;
+}
+
+.float-right {
+  float: right;
+}
+.hidden {
+  display: none !important;
+}
+.no-padding {
+  padding: 0 !important;
+}
+
+.page-spacer {
+  margin-top: 2em;
+}
+
+.text-center {
+  text-align: center;
+}
